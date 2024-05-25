@@ -10,7 +10,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg  \
     tmux  \
     cmake  \
-    g++ wget unzip  \
+    g++ wget unzip zip \
     pkg-config
 
 export WORK_DIR=/workspace
