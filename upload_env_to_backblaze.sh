@@ -3,6 +3,7 @@ mv b2-linux b2
 chmod +x b2
 
 # authorization
+./b2 account authorize 
 
 # upload
 ./b2 file upload ffcv-env ffcv_conda_env.zip ffcv_conda_env.zip
