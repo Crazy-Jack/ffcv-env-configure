@@ -1,13 +1,80 @@
-echo "[] Configure PATH for PKG and LD_LIBRARY_PATH"
-export WORKDIR=/workspace/env
+export WORK_DIR=/workspace
+export WORK_ENV_DIR=/workspace/env
+
+echo "#########################"
+echo "#  [1] Backblaze Setup  #"
+echo "#########################"
+
+cd $WORK_DIR
+# Download the environment
+wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux
+mv b2-linux b2
+chmod +x b2
+# authentica the b2
+./b2 account authorize 
+
+
+echo "#########################"
+echo "#  [2]  Ubuntu Setup    #"
+echo "#########################"
+apt-get update && apt-get install -y --no-install-recommends \
+    software-properties-common   \
+    build-essential  \
+    curl  \
+    git \
+    vim  \
+    ffmpeg  \
+    tmux  \
+    cmake  \
+    g++ wget unzip zip \
+    pkg-config
+
+
+echo "#############################"
+echo "# [3] Download Environments #"
+echo "#############################"
+
+# download the ffcv_conda_env.zip
+./b2 file download b2://ffcv-env/ffcv_conda_env.zip $WORK_DIR
+
+echo "##############################"
+echo "# [4] Configure Environments #"
+echo "##############################"
+
+cd $WORK_DIR
+unzip ffcv_conda_env.zip
+
+# init conda
+source $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh
+conda init bash
+source $HOME/.bashrc 
+# activate ffcv
 conda activate ffcv 
-# configure cuda path
+
+# env
 export LD_LIBRARY_PATH=$CONDA_PREFIX/ffcv/lib:$LD_LIBRARY_PATH
 
 # configure pkg path for opencv and libjpeg-turbo
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORKDIR/Install-OpenCV/source/lib/pkgconfig
-export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORKDIR/Install-libjpeg-turbo/install/lib/pkgconfig
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib/pkgconfig
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/pkgconfig
 
 # configure LD_library
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORKDIR/Install-OpenCV/source/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORKDIR/Install-libjpeg-turbo/install/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
+
+echo "#########################"
+echo "#   Test Environments   #"
+echo "#########################"
+echo "######### [14 / 14] Test FFCV is installed #########"
+# To test, we run a simple cifar which should only takes about a few mintes. 
+conda activate ffcv 
+cd /tmp/
+git clone https://github.com/libffcv/ffcv.git && cd /tmp/ffcv/examples/cifar
+bash train_cifar.sh
+cd /tmp/
+rm -rf /tmp/ffcv # clean up
+cd $WORK_DIR
+
+echo "#########################"
+echo "#        DONE :)        #"
+echo "#########################"
