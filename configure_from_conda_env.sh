@@ -1,9 +1,11 @@
 export WORK_DIR=/workspace
 export WORK_ENV_DIR=/workspace/env
 
+echo ""
 echo "#########################"
 echo "#  [1] Backblaze Setup  #"
 echo "#########################"
+echo ""
 
 cd $WORK_DIR
 # Download the environment
@@ -14,9 +16,12 @@ chmod +x b2
 ./b2 account authorize 
 
 
+echo ""
 echo "#########################"
 echo "#  [2]  Ubuntu Setup    #"
 echo "#########################"
+echo ""
+
 apt-get update && apt-get install -y --no-install-recommends \
     software-properties-common   \
     build-essential  \
@@ -30,16 +35,20 @@ apt-get update && apt-get install -y --no-install-recommends \
     pkg-config
 
 
+echo ""
 echo "#############################"
 echo "# [3] Download Environments #"
 echo "#############################"
+echo ""
 
 # download the ffcv_conda_env.zip
 ./b2 file download b2://ffcv-env/ffcv_conda_env.zip $WORK_DIR
 
+echo ""
 echo "##############################"
 echo "# [4] Configure Environments #"
 echo "##############################"
+echo ""
 
 cd $WORK_DIR
 unzip ffcv_conda_env.zip
@@ -62,10 +71,11 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/inst
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
+echo ""
 echo "#########################"
 echo "#   Test Environments   #"
 echo "#########################"
-echo "######### [14 / 14] Test FFCV is installed #########"
+echo ""
 # To test, we run a simple cifar which should only takes about a few mintes. 
 conda activate ffcv 
 cd /tmp/
