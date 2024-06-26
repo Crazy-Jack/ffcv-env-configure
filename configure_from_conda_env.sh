@@ -54,9 +54,9 @@ cd $WORK_DIR
 unzip ffcv_conda_env.zip
 
 # init conda
-source $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh
+. $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh
 conda init bash
-source $HOME/.bashrc 
+. $HOME/.bashrc 
 # activate ffcv
 conda activate ffcv 
 
