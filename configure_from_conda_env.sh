@@ -70,6 +70,11 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/inst
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
+# install ffcv ssl 
+conda activate ffcv && cd $WORK_ENV_DIR && \
+git clone https://github.com/facebookresearch/FFCV-SSL.git && \
+cd FFCV-SSL && pip install -e . 
+
 echo ""
 echo "#########################"
 echo "#   Test Environments   #"
