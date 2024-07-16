@@ -103,7 +103,8 @@ mkdir -p /workspace/data/ffcv-imagenet
 
 
 # cuda11.8
-conda install nvidia/label/cuda-11.8.0::cuda-toolkit
+conda install nvidia/label/cuda-11.8.0::cuda-toolkit -y && \
+conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.8 -c pytorch -c nvidia -y 
 
 
 
