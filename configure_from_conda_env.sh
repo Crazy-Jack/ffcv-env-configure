@@ -60,7 +60,7 @@ source $HOME/.bashrc && \
 source activate /workspace/env/miniconda/envs/ffcv
 
 # env
-export LD_LIBRARY_PATH=$CONDA_PREFIX/ffcv/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$CONDA_PREFIX/ffcv/lib
 
 # configure pkg path for opencv and libjpeg-turbo
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib/pkgconfig
