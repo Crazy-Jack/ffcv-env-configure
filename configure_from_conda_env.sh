@@ -102,7 +102,8 @@ mkdir -p /workspace/data/ffcv-imagenet
 /workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-imagenet/train_500_0.50_90.ffcv
 
 
-
+# cuda11.8
+conda install nvidia/label/cuda-11.8.0::cuda-toolkit
 
 
 
