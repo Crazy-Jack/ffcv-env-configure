@@ -75,6 +75,11 @@ conda activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
 git clone https://github.com/facebookresearch/FFCV-SSL.git && \
 cd FFCV-SSL && pip install -e . 
 
+# install timm
+conda activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
+git clone https://github.com/huggingface/pytorch-image-models.git && \
+cd pytorch-image-models && git checkout v0.4.12 && pip install -e . 
+
 echo ""
 echo "#########################"
 echo "#   Test Environments   #"
