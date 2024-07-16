@@ -109,7 +109,7 @@ conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.8 -c pytorch -c
 
 # ffcv
 source activate /workspace/env/miniconda/envs/ffcv && \
-pip uninstall ffcv && \
+pip uninstall ffcv -y && \
 pip install /workspace/env/FFCV-SSL
 
 
