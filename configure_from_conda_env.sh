@@ -57,7 +57,7 @@ unzip ffcv_conda_env.zip
 bash $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh && \
 conda init bash && \
 source $HOME/.bashrc && \
-conda activate /workspace/env/miniconda/envs/ffcv
+source activate /workspace/env/miniconda/envs/ffcv
 
 # env
 export LD_LIBRARY_PATH=$CONDA_PREFIX/ffcv/lib:$LD_LIBRARY_PATH
@@ -71,12 +71,12 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
 # install ffcv ssl 
-conda activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
+source activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
 git clone https://github.com/facebookresearch/FFCV-SSL.git && \
 cd FFCV-SSL && pip install -e . 
 
 # install timm
-conda activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
+source activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
 git clone https://github.com/huggingface/pytorch-image-models.git && \
 cd pytorch-image-models && git checkout v0.4.12 && pip install -e . 
 
@@ -86,7 +86,7 @@ echo "#   Test Environments   #"
 echo "#########################"
 echo ""
 # To test, we run a simple cifar which should only takes about a few mintes. 
-conda activate ffcv 
+source activate ffcv 
 cd /tmp/
 git clone https://github.com/libffcv/ffcv.git && cd /tmp/ffcv/examples/cifar
 bash train_cifar.sh
@@ -103,7 +103,7 @@ mkdir -p /workspace/data/ffcv-imagenet
 
 
 # cuda11.8
-conda activate /workspace/env/miniconda/envs/ffcv && \
+source activate /workspace/env/miniconda/envs/ffcv && \
 conda install nvidia/label/cuda-11.8.0::cuda-toolkit -y && \
 conda install pytorch==2.0.0 torchvision==0.15.0 pytorch-cuda=11.8 -c pytorch -c nvidia -y 
 
