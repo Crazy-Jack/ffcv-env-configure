@@ -54,10 +54,10 @@ cd $WORK_DIR
 unzip ffcv_conda_env.zip
 
 # init conda
-. $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh && \
+bash $WORK_ENV_DIR/miniconda/etc/profile.d/conda.sh && \
 conda init bash && \
-. $HOME/.bashrc && \
-conda activate ffcv 
+source $HOME/.bashrc && \
+conda activate /workspace/env/miniconda/envs/ffcv
 
 # env
 export LD_LIBRARY_PATH=$CONDA_PREFIX/ffcv/lib:$LD_LIBRARY_PATH
