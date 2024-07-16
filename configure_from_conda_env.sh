@@ -71,7 +71,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
 # install ffcv ssl 
-conda activate ffcv && cd $WORK_ENV_DIR && \
+conda activate /workspace/env/miniconda/envs/ffcv && cd $WORK_ENV_DIR && \
 git clone https://github.com/facebookresearch/FFCV-SSL.git && \
 cd FFCV-SSL && pip install -e . 
 
@@ -88,6 +88,18 @@ bash train_cifar.sh
 cd /tmp/
 rm -rf /tmp/ffcv # clean up
 cd $WORK_DIR
+
+
+echo "#########################"
+echo "#        Dataset :)     #"
+echo "#########################"
+mkdir -p /workspace/data/ffcv-imagenet
+/workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-imagenet/train_500_0.50_90.ffcv
+
+
+
+
+
 
 echo "#########################"
 echo "#        DONE :)        #"
