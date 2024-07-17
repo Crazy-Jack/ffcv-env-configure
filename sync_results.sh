@@ -34,4 +34,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
 
+# Upload results to pretrain-dense
+/workspace/b2 sync --threads 10 /workspace/pretraining-for-dense-tasks/experiments/ b2://pretrain-for-dense-prediction
+
+
 
