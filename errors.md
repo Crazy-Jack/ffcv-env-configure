@@ -52,3 +52,5 @@ TypeError: Ambiguity overriding config arguments, use named parameter to resolve
 ```
 
 Solution:
+
+Have argument with the same name, i.e. def myfun(arg1, arg1). 
