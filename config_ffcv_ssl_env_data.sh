@@ -79,3 +79,7 @@ echo "#########################"
 mkdir -p /workspace/data/ffcv-imagenet
 /workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-imagenet/train_500_0.50_90.ffcv
 
+# original imagenet un-compiled
+mkdir -p /workspace/data/imagenet
+/workspace/b2 file download b2://ffcv-imagenet/imagenet-object-localization-challenge.zip /workspace/data/imagenet/imagenet-object-localization-challenge.zip
+
