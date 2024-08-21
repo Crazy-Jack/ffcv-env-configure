@@ -53,7 +53,7 @@ echo ""
 cd $WORK_DIR
 # Unpack environment into directory `my_env`
 mkdir -p $WORK_DIR/ffcv
-tar -xzf ffcv.tar.gz -C ffcv
+tar -xvzf ffcv.tar.gz -C ffcv
 
 
 # Activate the environment. This adds `my_env/bin` to your path
