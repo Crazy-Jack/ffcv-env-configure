@@ -71,3 +71,11 @@ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/inst
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-OpenCV/source/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$WORK_ENV_DIR/Install-libjpeg-turbo/install/lib/
 
+
+
+echo "#########################"
+echo "#        Dataset :)     #"
+echo "#########################"
+mkdir -p /workspace/data/ffcv-imagenet
+/workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-imagenet/train_500_0.50_90.ffcv
+
