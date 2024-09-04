@@ -77,3 +77,12 @@ echo "#        Dataset :)     #"
 echo "#########################"
 mkdir -p /workspace/data/ffcv-data
 /workspace/b2 file download b2://ffcv-imagenet/imagenet_coco_ade_500_0.50_90.ffcv /workspace/data/ffcv-data/imagenet_coco_ade_500_0.50_90.ffcv
+
+echo "#########################"
+echo "#       Code            #"
+echo "#########################"
+
+cd /workspace
+git clone git@github.com:Crazy-Jack/pretrain_ssl_dense.git
+cd /workspace/pretrain_ssl_dense/experiment/imagenet_coco_ade/dino/vastai
+bash run_yolo_m.sh 0,1,2,3,4,5,6,7
