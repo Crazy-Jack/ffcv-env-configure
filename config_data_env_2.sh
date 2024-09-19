@@ -76,6 +76,10 @@ echo "#########################"
 echo "#        Dataset :)     #"
 echo "#########################"
 mkdir -p /workspace/data/ffcv-data
+# small dataset first coco+ade
+/workspace/b2 file download b2://ffcv-imagenet/coco_ade_2048_1_90.ffcv /workspace/data/ffcv-data/coco_ade_2048_1_90.ffcv
+
+# big imagenet + coco + ade
 /workspace/b2 file download b2://ffcv-imagenet/imagenet_coco_ade_500_0.50_90.ffcv /workspace/data/ffcv-data/imagenet_coco_ade_500_0.50_90.ffcv
 
 echo "#########################"
