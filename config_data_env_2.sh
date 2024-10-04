@@ -80,7 +80,8 @@ mkdir -p /workspace/data/ffcv-data
 /workspace/b2 file download b2://ffcv-imagenet/coco_ade_2048_1_90.ffcv /workspace/data/ffcv-data/coco_ade_2048_1_90.ffcv
 
 # big imagenet + coco + ade
-/workspace/b2 file download b2://ffcv-imagenet/imagenet_coco_ade_500_0.50_90.ffcv /workspace/data/ffcv-data/imagenet_coco_ade_500_0.50_90.ffcv
+# /workspace/b2 file download b2://ffcv-imagenet/imagenet_coco_ade_500_0.50_90.ffcv /workspace/data/ffcv-data/imagenet_coco_ade_500_0.50_90.ffcv
+/workspace/b2 file download b2://ffcv-imagenet/imagenet-coco-ade_2048_1_90.ffcv /workspace/data/ffcv-data/imagenet-coco-ade_2048_1_90.ffcv
 
 echo "#########################"
 echo "#       Code            #"
