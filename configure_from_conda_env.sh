@@ -98,7 +98,7 @@ cd $WORK_DIR
 echo "#########################"
 echo "#        Dataset :)     #"
 echo "#########################"
-mkdir -p /workspace/data/ffcv-imagenet
+mkdir -p /workspace/data/ffcv-data
 # /workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-imagenet/train_500_0.50_90.ffcv
 /workspace/b2 file download b2://ffcv-imagenet/imagenet-coco-ade_2048_1_90.ffcv /workspace/data/ffcv-data/imagenet-coco-ade_2048_1_90.ffcv
 
