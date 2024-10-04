@@ -87,7 +87,7 @@ echo "#########################"
 echo "#       Code            #"
 echo "#########################"
 
-cd /workspace
-git clone git@github.com:Crazy-Jack/pretrain_ssl_dense.git
-cd /workspace/pretrain_ssl_dense/experiment/imagenet_coco_ade/dino/vastai
-bash run_yolo_m.sh 0,1,2,3,4,5,6,7
+# cd /workspace
+# git clone git@github.com:Crazy-Jack/pretrain_ssl_dense.git
+# cd /workspace/pretrain_ssl_dense/experiment/imagenet_coco_ade/dino/vastai
+# bash run_yolo_m.sh 0,1,2,3,4,5,6,7
