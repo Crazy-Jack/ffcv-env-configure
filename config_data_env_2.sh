@@ -87,6 +87,9 @@ mkdir -p /workspace/data/ffcv-data
 pip install slot_attention
 pip install IPython
 
+git config user.email "jacklitianqin@gmail.com"
+git config user.name "Tianqin Li"
+
 echo "#########################"
 echo "#       Code            #"
 echo "#########################"
