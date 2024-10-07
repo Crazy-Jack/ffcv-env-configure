@@ -83,12 +83,14 @@ mkdir -p /workspace/data/ffcv-data
 # /workspace/b2 file download b2://ffcv-imagenet/imagenet_coco_ade_500_0.50_90.ffcv /workspace/data/ffcv-data/imagenet_coco_ade_500_0.50_90.ffcv
 /workspace/b2 file download b2://ffcv-imagenet/imagenet-coco-ade_2048_1_90.ffcv /workspace/data/ffcv-data/imagenet-coco-ade_2048_1_90.ffcv
 
-
-pip install slot_attention
+conda init bash && \
+source $HOME/.bashrc && conda activate $WORK_DIR/env/miniconda/envs/ffcv && \
+pip install slot_attention && \
 pip install IPython
 
 git config user.email "jacklitianqin@gmail.com"
 git config user.name "Tianqin Li"
+
 
 echo "#########################"
 echo "#       Code            #"
