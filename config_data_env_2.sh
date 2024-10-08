@@ -7,13 +7,14 @@ echo "#  [1] Backblaze Setup  #"
 echo "#########################"
 echo ""
 
+
 cd $WORK_DIR
-# Download the environment
-wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux
-mv b2-linux b2
-chmod +x b2
-# authentica the b2
-./b2 account authorize 
+# # Download the environment
+# wget https://github.com/Backblaze/B2_Command_Line_Tool/releases/latest/download/b2-linux
+# mv b2-linux b2
+# chmod +x b2
+# # authentica the b2
+# ./b2 account authorize 
 
 
 echo ""
