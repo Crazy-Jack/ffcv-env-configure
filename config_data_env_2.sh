@@ -89,8 +89,8 @@ source $HOME/.bashrc && conda activate $WORK_DIR/env/miniconda/envs/ffcv && \
 pip install slot_attention && \
 pip install IPython
 
-git config user.email "jacklitianqin@gmail.com"
-git config user.name "Tianqin Li"
+git config --global user.email "jacklitianqin@gmail.com"
+git config --global user.name "Tianqin Li"
 
 
 echo "#########################"
