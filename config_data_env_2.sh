@@ -86,8 +86,8 @@ mkdir -p /workspace/data/ffcv-data
 
 conda init bash && \
 source $HOME/.bashrc && conda activate $WORK_DIR/env/miniconda/envs/ffcv && \
-pip install slot_attention && \
-pip install IPython
+$WORK_DIR/env/miniconda/envs/ffcv/bin/pip install slot_attention && \
+$WORK_DIR/env/miniconda/envs/ffcv/bin/pip install IPython
 
 git config --global user.email "jacklitianqin@gmail.com"
 git config --global user.name "Tianqin Li"
