@@ -79,6 +79,8 @@ echo "#########################"
 mkdir -p /workspace/data/ffcv-data
 # small dataset first coco+ade
 /workspace/b2 file download b2://ffcv-imagenet/in1k_train_500_0.50_90.ffcv /workspace/data/ffcv-data/in1k_train_500_0.50_90.ffcv
+/workspace/b2 file download b2://ffcv-imagenet/in1k_val_500_0.50_90.ffcv /workspace/data/ffcv-data/in1k_val_500_0.50_90.ffcv
+
 
 conda init bash && \
 source $HOME/.bashrc && conda activate $WORK_DIR/env/miniconda/envs/ffcv && \
