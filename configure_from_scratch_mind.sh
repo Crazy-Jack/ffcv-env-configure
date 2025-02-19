@@ -42,6 +42,7 @@ echo $CONDA_PREFIX # workspace/env/miniconda/envs/ffcv
 echo "######### [4 / 14] Install cudatoolkit and cudnn on conda #########"
 conda install -c conda-forge cudatoolkit=11.8 cudnn=8.2 -y
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+# if `conda install -c conda-forge cudatoolkit=11.8 cudnn=8.2 -y` doesn't work, you can try to use `module load cuda-11.8`
 
 echo "######### [5 / 14] Install torch related pkg #########"
 # install torch
